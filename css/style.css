@@ -33,12 +33,33 @@ body {
   font: normal 400 1.8rem "Kumbh Sans", sans-serif;
   color: #000;
   background-color: #19a2ae;
-  background-image: url("../images/bg-pattern-top.svg");
-  background-position: top -500px left 115%;
-  background-repeat: no-repeat;
 }
 
-.title { font-size: 2rem; }
+.main { position: relative; }
+.main::before {
+  content: "";
+  position: absolute;
+  top: -157%;
+  right: 40%;
+  inline-size: 978px;
+  block-size: 978px;
+  background: url("../images/bg-pattern-top.svg") no-repeat;
+  z-index: -1;
+}
+.main::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  inline-size: 978px;
+  block-size: 978px;
+  background: url("../images/bg-pattern-bottom.svg") no-repeat;
+  z-index: -1;
+}
+.main__title {
+  font-size: 2rem;
+  color: #fff;
+}
 
 .card {
   inline-size: 32.7rem;
@@ -64,7 +85,6 @@ body {
 .card__img {
   position: absolute;
   top: -34%;
-  display: block;
   inline-size: 9.6rem;
   block-size: auto;
   margin-block-end: 2.3rem;
@@ -76,7 +96,6 @@ body {
   column-gap: 1rem;
   margin-block-end: 1rem;
 }
-.card__user-name { font-weight: 700; }
 .card__user-location { font-size: 1.4rem; }
 .card__block-stats {
   display: flex;
@@ -86,33 +105,45 @@ body {
 }
 .card__stats:nth-child(1) { margin-inline-end: 3.8rem; }
 .card__stats:nth-child(2) { margin-inline-end: 5rem; }
-.card__count {
-  font-weight: 700;
-  margin-block-end: .7rem;
-}
+.card__count { margin-block-end: .7rem; }
 .card__count-description {
   font-size: 1rem;
   letter-spacing: .2rem;
 }
 
-.title,
+.main__title,
 .card { margin-block-end: 2rem; }
+
+.main__title,
+.card__user-name,
+.card__count { font-weight: 700; }
 
 .card__user-age,
 .card__user-location,
 .card__count-description { color: #6a6f81; }
 
-.title,
+.main__title,
 .card__stats,
 .attribution { text-align: center; }
 
-.attribution { font-size: 1.1rem; }
+.main__title,
+.attribution { text-shadow: 0 0 1rem #000; }
+
+.attribution {
+  font-size: 1.1rem;
+  color: #fff;
+}
 .attribution__link { transition: color 80ms ease 0s; }
 .attribution__link:hover,
-.attribution__link:focus { color: #fff; }
+.attribution__link:focus { color: #000; }
 
 /* ---- Desktop Version ---- */
 @media (min-width: 48em) {
+  body {
+    max-inline-size: 144rem;
+    margin-inline: auto;
+  }
+
   .card { inline-size: 35rem; }
-  .card__block-stats { padding-inline: 5rem; }
+  .card__block-stats { padding-inline: 5.2rem; }
 }
