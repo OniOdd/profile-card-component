@@ -24,6 +24,95 @@ body { inline-size: 100%; }
 /* ---- Main Code ---- */
 /* ---- Mobile Version ---- */
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-block-size: 100%;
+  padding: 14rem 2.5rem;
   font: normal 400 1.8rem "Kumbh Sans", sans-serif;
   color: #000;
+  background-color: #19a2ae;
+  background-image: url("../images/bg-pattern-top.svg");
+  background-position: top -500px left 115%;
+  background-repeat: no-repeat;
+}
+
+.title { font-size: 2rem; }
+
+.card {
+  inline-size: 32.7rem;
+  background-color: #fff;
+  border-radius: 1.6rem;
+  box-shadow: 0 0 1rem .6rem #6a6f8133;
+  overflow: hidden;
+}
+.card__block-bg {
+  block-size: 14rem;
+  background: #2d3248 url("../images/bg-pattern-card.svg") no-repeat;
+}
+.card__block-user {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block-start: 7rem;
+  padding-block-end: 2.4rem;
+  border-block-end: .1rem solid #96969677;
+}
+.card__img {
+  position: absolute;
+  top: -34%;
+  display: block;
+  inline-size: 9.6rem;
+  block-size: auto;
+  margin-block-end: 2.3rem;
+  border: .5rem solid #fff;
+  border-radius: 50%;
+}
+.card__container {
+  display: flex;
+  column-gap: 1rem;
+  margin-block-end: 1rem;
+}
+.card__user-name { font-weight: 700; }
+.card__user-location { font-size: 1.4rem; }
+.card__block-stats {
+  display: flex;
+  align-items: center;
+  block-size: 8.8rem;
+  padding-inline: 4rem;
+}
+.card__stats:nth-child(1) { margin-inline-end: 3.8rem; }
+.card__stats:nth-child(2) { margin-inline-end: 5rem; }
+.card__count {
+  font-weight: 700;
+  margin-block-end: .7rem;
+}
+.card__count-description {
+  font-size: 1rem;
+  letter-spacing: .2rem;
+}
+
+.title,
+.card { margin-block-end: 2rem; }
+
+.card__user-age,
+.card__user-location,
+.card__count-description { color: #6a6f81; }
+
+.title,
+.card__stats,
+.attribution { text-align: center; }
+
+.attribution { font-size: 1.1rem; }
+.attribution__link { transition: color 80ms ease 0s; }
+.attribution__link:hover,
+.attribution__link:focus { color: #fff; }
+
+/* ---- Desktop Version ---- */
+@media (min-width: 48em) {
+  .card { inline-size: 35rem; }
+  .card__block-stats { padding-inline: 5rem; }
 }
