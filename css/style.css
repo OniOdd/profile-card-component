@@ -35,14 +35,15 @@ body {
   background-color: #19a2ae;
 }
 
+/* Adding scenery with pseudo elements */
 .main { position: relative; }
 .main::before {
   content: "";
   position: absolute;
   top: -157%;
   right: 40%;
-  inline-size: 978px;
-  block-size: 978px;
+  inline-size: 97.8rem;
+  block-size: 97.8rem;
   background: url("../images/bg-pattern-top.svg") no-repeat;
   z-index: -1;
 }
@@ -51,16 +52,18 @@ body {
   position: absolute;
   top: 50%;
   left: 30%;
-  inline-size: 978px;
-  block-size: 978px;
+  inline-size: 97.8rem;
+  block-size: 97.8rem;
   background: url("../images/bg-pattern-bottom.svg") no-repeat;
   z-index: -1;
 }
+/* Main title on the page */
 .main__title {
   font-size: 2rem;
   color: #fff;
 }
 
+/* Block "Card" */
 .card {
   inline-size: 32.7rem;
   background-color: #fff;
@@ -68,10 +71,12 @@ body {
   box-shadow: 0 0 1rem .6rem #6a6f8133;
   overflow: hidden;
 }
+/* Background image in the top block */
 .card__block-bg {
   block-size: 14rem;
   background: #2d3248 url("../images/bg-pattern-card.svg") no-repeat;
 }
+/* Block with user information */
 .card__block-user {
   position: relative;
   display: flex;
@@ -91,6 +96,7 @@ body {
   border: .5rem solid #fff;
   border-radius: 50%;
 }
+/* Container to align name and age in one line */
 .card__container {
   display: flex;
   column-gap: 1rem;
@@ -111,24 +117,30 @@ body {
   letter-spacing: .2rem;
 }
 
+/* Bottom margin for the main title and the "Card" block */
 .main__title,
 .card { margin-block-end: 2rem; }
 
+/* Bold font for the main title, username, and counter (followers, likes...) */
 .main__title,
 .card__user-name,
 .card__count { font-weight: 700; }
 
+/* Dark color for age, location, and description of the counter */
 .card__user-age,
 .card__user-location,
 .card__count-description { color: #6a6f81; }
 
+/* Center text alignment (main title, block with statistics, attribution) */
 .main__title,
 .card__stats,
 .attribution { text-align: center; }
 
+/* Text shadow (main title and attribution block) */
 .main__title,
 .attribution { text-shadow: 0 0 1rem #000; }
 
+/* Styling the "attribution" block */
 .attribution {
   font-size: 1.1rem;
   color: #fff;
